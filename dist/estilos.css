@@ -1,0 +1,22 @@
+body {
+    background: black;
+  }
+
+  #cartoons {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin: 50px 100px;
+  }
+
+  #cartoons img {
+     width: 150px;
+     padding: 10px;
+     border-radius: 50%;
+  }
+
+  img:hover {
+   transform: scale(1.2)
+  }
+  
+ 
