@@ -1,12 +1,29 @@
 import rickAndMorty from './promesa'
-import Character from './Personajes'
 import $ from 'jquery'
 
 rickAndMorty.then((characters) => {
-  const eachCharacter = document.getElementById('characters')
   characters.forEach(e => {
-    document.getElementById('cartoons').innerHTML += `<img id="${e.id}" src="${e.imagen}">`
-    
+    document.getElementById('cartoons').innerHTML += `<div class="cartoons-container"><img id="${e.id}" src="${e.imagen}">
+      <ul>
+        <li>${e.nombre}</li>
+        <li>${e.genero}</li>
+        <li>${e.especie}</li>
+        <li>${e.estado}</li>
+      </ul>
+    </div>`;
   });
+  $(document).ready(function(){
+    $('ul').hide();
+    
+     $('img').click(function(){
+       $(this).next('ul').toggle();
+    });
+    });
+  
+  
 });
+
+
+
+
 
